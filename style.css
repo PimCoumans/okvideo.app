@@ -12,7 +12,23 @@ body {
   display: block;
   width: 250px;
   height: 250px;
-  margin: 100px auto;
+  margin: 100px auto 0 auto;
   border-radius: 40px;
   box-shadow: 0 20px 27px 0 rgba(63,3,3,0.39);
+}
+
+.textOkvideo, .appStoreBadge {
+  display: block;
+  margin: 50px auto;
+}
+
+.description {
+  width: 600px;
+  margin: 100px auto;
+  display: block;
+  font-size: 26px;
+  text-align: center;
+  color: rgba(255,255,255,0.80);
+  letter-spacing: 0;
+  line-height: 40px;
 }
