@@ -23,7 +23,8 @@ body {
 }
 
 .description {
-  width: 600px;
+  max-width: 600px;
+  padding: 0 20px;
   margin: 100px auto;
   display: block;
   font-size: 26px;
