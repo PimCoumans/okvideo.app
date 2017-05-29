@@ -3,6 +3,10 @@
 html, body {
      height: 100%;
 }
+
+body {
+  padding-bottom: 100px;
+}
 html {
   background-color: #8B6CE8;
   background: linear-gradient(-180deg, #8B6CE8 11%, #EC4D4E 47%);
