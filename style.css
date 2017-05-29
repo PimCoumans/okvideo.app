@@ -17,6 +17,22 @@ body {
   box-shadow: 0 20px 27px 0 rgba(63,3,3,0.39);
 }
 
+.appStoreLink {
+  display: block;
+  transition: all 0.2s ease;
+}
+
+.appStoreBadge {
+  transition: all 0.2s ease;
+  border-radius: 5px;
+}
+.appStoreLink:hover {
+  transform: translate(0, -5px);
+}
+.appStoreLink:hover .appStoreBadge {
+  box-shadow: 0 20px 27px 0 rgba(63,3,3,0.39);
+
+}
 .textOkvideo, .appStoreBadge {
   display: block;
   margin: 50px auto;
