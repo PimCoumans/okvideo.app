@@ -1,19 +1,25 @@
 @import "reset.css";
+
+html, body {
+     height: 100%;
+}
 html {
   background-color: #8B6CE8;
+  background: linear-gradient(-180deg, #8B6CE8 11%, #EC4D4E 47%);
+  background-attachment: fixed;
+
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(-180deg, #8B6CE8 11%, #EC4D4E 47%);
-  height: 100%;
+  margin-top: 100px;
 }
 
 .appIcon {
   display: block;
   width: 250px;
   height: 250px;
-  margin: 100px auto 0 auto;
+  margin: 0 auto 0 auto;
   border-radius: 40px;
   box-shadow: 0 20px 27px 0 rgba(63,3,3,0.39);
 }
