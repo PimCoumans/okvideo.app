@@ -113,6 +113,32 @@ footer {
   display: block;
 }
 
+.intro {
+  max-width: 800px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .intro {
+    flex-flow: column;
+  }
+}
+
+.video-container {
+  position: relative;
+}
+
+.video-container video {
+  margin: 16.5px 17.5px;
+}
+
+.video-container .video-overlay {
+  pointer-events: none;
+  position: absolute; top: 0; width: 275px; height: 553px; background: transparent url('../img/iphone.png') no-repeat; background-size: contain;
+}
+
 .page {
   max-width: 800px;
   text-align: left;

@@ -32,11 +32,25 @@
 		<meta name="apple-itunes-app" content="app-id=1207023470">
 	</head>
 	<body>
-		<img src="/img/appIcon.svg" class="appIcon" alt="App Icon">
-		<img src="/img/text-OKVideo.svg" class="textOkvideo" alt="OK Video">
-		<a href="https://itunes.apple.com/us/app/ok-video/id1207023470?ls=1&mt=8" class="appStoreLink">
-			<img src="/img/appStoreBadge.svg" class="appStoreBadge" alt="Download on The App Store">
-		</a>
+		<section class="intro">
+			<div>
+				<img src="img/appIcon.svg" class="appIcon" alt="App Icon">
+				<img src="img/text-OKVideo.svg" class="textOkvideo" alt="OK Video">
+				<a href="https://itunes.apple.com/us/app/ok-video/id1207023470?ls=1&mt=8" class="appStoreLink">
+					<img src="img/appStoreBadge.svg" class="appStoreBadge" alt="Download on The App Store">
+				</a>
+			</div>
+			<div class="video-container">
+				<video width="240" height="520" muted autoplay loop onclick="this.muted = !this.muted; if(!this.muted) this.currentTime = 0;">
+					<source src="video/intro265.mp4" type="video/mp4; codecs=hevc">
+					<source src="video/intro264.mp4" type="video/mp4">
+					<source src="video/intro.webm" type="video/webm; codecs=vp9">
+					Your browser does not support the video tag.
+				</video>
+				<div class="video-overlay">
+				</div>
+			</div>
+		</section>
 
 		<spection class="description">
 			<p>Super fast video sequences. Hold the screen to record and quickly make an OK Video montage. Then, send it off to your favorite app, directly to your camera roll, or post it to one of those story apps.</p>
@@ -50,7 +64,7 @@
 				<li><a href="https://twitter.com/@thinkoco">@thinkoco</a></li>
 			</ul>
 			<a href="https://twitter.com/okvideoapp" class="twitterLink">
-				<img src="/img/twitter.svg" class ="twitterIcon" alt="Follow OK Video on twitter">
+				<img src="img/twitter.svg" class ="twitterIcon" alt="Follow OK Video on twitter">
 			</a>
 		</section>
 		<footer></footer>
