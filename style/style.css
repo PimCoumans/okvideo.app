@@ -61,6 +61,12 @@ body {
   line-height: 40px;
 }
 
+section {
+  padding: 0px 20px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
 
 .credits h2 {
   color: rgba(0,0,0,0.5);
@@ -106,3 +112,56 @@ footer {
   height:100px;
   display: block;
 }
+
+.page {
+  max-width: 800px;
+  text-align: left;
+  font-size: 16px;
+  color: #fff;
+}
+
+.page h1 {
+  font-weight: 700;
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+.page p,
+.page ul {
+  margin-bottom: 0.5em;
+  line-height: 1.2em;
+}
+
+.page h2 {
+  font-size: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.page ul {
+  list-style-type: circle;
+  list-style-position: inside;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+.page a {
+  color: #fff;
+  /* text-decoration: none; */
+}
+
+/* .page a:hover {
+  text-decoration: underline;
+} */
+
+/* .page a:after {
+  content: '\2197';
+  /* font-size: 0.5em;
+  vertical-align: super;
+  margin-left: 0.5em; */
+  /* text-decoration: none !important; */
+}
+
+.page a:hover:after {
+  text-decoration: none;
+} */
