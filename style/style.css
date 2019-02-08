@@ -132,6 +132,7 @@ footer {
 
 .video-container video {
   margin: 16.5px 17.5px;
+  background-color: #000;
 }
 
 .video-container.muted .video-overlay:after {
