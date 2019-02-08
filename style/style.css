@@ -126,16 +126,34 @@ footer {
   margin-bottom: 0.5em;
 }
 
+.page strong {
+  font-weight: 500;
+}
+
 .page p,
 .page ul {
   margin-bottom: 0.5em;
   line-height: 1.2em;
 }
 
-.page h2 {
-  font-size: 1.5em;
+.page h2,
+.page h3,
+.page h4 {
+  font-weight: 500;
   margin-top: 1em;
   margin-bottom: 0.5em;
+}
+
+.page h2 {
+  font-size: 1.5em;
+}
+
+.page h3 {
+  font-size: 1.2em;
+}
+
+.page h4 {
+  font-size: 1em;
 }
 
 .page ul {
@@ -147,21 +165,4 @@ footer {
 
 .page a {
   color: #fff;
-  /* text-decoration: none; */
 }
-
-/* .page a:hover {
-  text-decoration: underline;
-} */
-
-/* .page a:after {
-  content: '\2197';
-  /* font-size: 0.5em;
-  vertical-align: super;
-  margin-left: 0.5em; */
-  /* text-decoration: none !important; */
-}
-
-.page a:hover:after {
-  text-decoration: none;
-} */
