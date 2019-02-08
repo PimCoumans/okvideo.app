@@ -40,8 +40,8 @@
 					<img src="img/appStoreBadge.svg" class="appStoreBadge" alt="Download on The App Store">
 				</a>
 			</div>
-			<div class="video-container">
-				<video width="240" height="520" muted autoplay loop playsinline onclick="this.muted = !this.muted; if(!this.muted) this.currentTime = 0;">
+			<div class="video-container muted" id="video-container">
+				<video width="240" height="520" muted autoplay loop playsinline>
 					<source src="video/intro265.mp4" type="video/mp4; codecs=hevc">
 					<source src="video/intro264.mp4" type="video/mp4">
 					<source src="video/intro.webm" type="video/webm; codecs=vp9">
@@ -68,5 +68,20 @@
 			</a>
 		</section>
 		<footer></footer>
+		<script type="text/javascript">
+			var container = document.getElementById('video-container');
+			var video = container.getElementsByTagName('video')[0];
+			container.onclick = function() {
+				video.muted = !video.muted;
+				console.log(video.muted);
+				console.log(container.classList);
+				if (!video.muted) {
+					video.currentTime = 0;
+					this.classList.remove('muted');
+				} else {
+					this.classList.add('muted');
+				}
+			}
+		</script>
 	</body>
 </html>
