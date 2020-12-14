@@ -24,8 +24,6 @@ body {
   width: 250px;
   height: 250px;
   margin: 0 auto 0 auto;
-  border-radius: 40px;
-  box-shadow: 0 20px 27px 0 rgba(63,3,3,0.39);
 }
 
 .appStoreLink {
@@ -50,7 +48,7 @@ body {
 }
 
 .description {
-  max-width: 600px;
+  max-width: 800px;
   padding: 0 20px;
   margin: 100px auto;
   display: block;
@@ -59,6 +57,14 @@ body {
   color: rgba(255,255,255,0.80);
   letter-spacing: 0;
   line-height: 40px;
+}
+
+.description p {
+  margin-bottom: 1em;
+}
+
+.description p strong {
+  font-weight: bold;
 }
 
 section {
