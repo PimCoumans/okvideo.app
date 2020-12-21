@@ -1,0 +1,106 @@
+body {
+	background-color: #0C0C0C;
+	color: #ffffff;
+	font-size: 16px;
+	font-family: ui-rounded, "SF Pro Rounded", system-ui, san-serif;
+}
+
+h1 {
+	font-weight: 900;
+	margin: 0rem;
+	font-size: 4rem;
+}
+
+h2 {
+	font-weight: 300;
+	font-size: 1.5rem;
+	margin: 0rem;
+}
+
+header {
+	text-align: center;
+	padding: 5rem 0 3rem 0;
+}
+
+.appStoreBadge {
+	width: 209px;
+	height: auto;
+	margin-top: 1.5rem;
+}
+
+section, footer {
+	display: flex;
+	flex-direction: column;
+	max-width: 900px;
+	margin: 3em auto 0 auto;
+	padding: 0;
+}
+
+#features img {
+	width: 200px;
+	height: auto;
+	margin: 0px;
+}
+
+#features {
+	display: flex;
+	flex-flow: row wrap;
+	flex-basis: 80px;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+#features figure {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	max-width: 300px;
+	margin: 0 0 3em 0;
+}
+
+#features figure .feature-icon {
+	width: 32px;
+	height: 32px;
+	margin-top: 2rem;
+	margin-bottom: 0.5rem;
+}
+
+#features figure figcaption {
+	padding-top: 2.5rem;
+	margin-top: 2rem;
+	font-size: 1.5rem;
+	text-align: center;
+	font-weight: 500;
+}
+
+#features figure.shoot figcaption {
+	background: url('../img/features/feature1-icon.png') top center no-repeat;
+}
+
+#features figure.edit figcaption {
+	background: url('../img/features/feature2-icon.png') top center no-repeat;
+}
+
+#features figure.send figcaption {
+	background: url('../img/features/feature3-icon.png') top center no-repeat;
+}
+
+#whatisit {
+	margin-top: 5rem;
+}
+
+#whatisit p {
+	font-size: 2.5rem;
+	font-weight: 400;
+	margin: 0 2rem;
+}
+
+footer {
+	text-align: center;
+	padding-bottom: 2rem;
+}
+
+footer p {
+	font-size: 1.5rem;
+}

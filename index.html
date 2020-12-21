@@ -1,89 +1,47 @@
-<!-- Todo:
-	Traffic Tracking
-	Open Graph Tags
-	viewport scale
-	Video Embed -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OK Video - Free tap-to-record video camera</title>
+  <meta name="description" content="Free tap-to-record video camera">
+  <meta name="author" content="pixelrock">
 
-		<title>OK Video - Super Fast Video Sequences</title>
-
-		<link rel="stylesheet" href="style/style.css">
-		<link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
-		<link rel="shortcut icon" href="/img/favicon.png">
-
-		<meta property="og:type" content="product">
-		<meta property="og:title" content="OK Video - Super Fast Video Sequences">
-		<meta property="og:description" content="Tap-to-record video camera limited only by your creativity. OK Video is unlimited, vine-style video recording without any editing. Easily create a vlog, a stop motion or just record whatever’s happening. After recording you can directly save it to your camera roll or send it to your favorite app.">
-		<meta property="og:url" content="https://okvideo.app/">
-		<meta property="og:image" content="https://okvideo.app/img/open-graph.png">
-
-		<meta name="twitter:card" content="app">
-		<meta name="twitter:site" content="@OKVideoApp">
-		<meta name="twitter:description" content="Tap-to-record video camera limited only by your creativity. OK Video is unlimited, vine-style video recording without any editing. Easily create a vlog, a stop motion or just record whatever’s happening. After recording you can directly save it to your camera roll or send it to your favorite app.">
-		<meta name="twitter:app:country" content="US">
-		<meta name="twitter:app:name:iphone" content="OK Video - Super Fast Video Sequences">
-		<meta name="twitter:app:id:iphone" content="1207023470">
-
-		<meta name="apple-itunes-app" content="app-id=1207023470">
-	</head>
-	<body>
-		<section class="intro">
-			<div>
-				<img src="img/appIcon.png" class="appIcon" alt="App Icon">
-				<img src="img/text-OKVideo.svg" class="textOkvideo" alt="OK Video">
-				<a href="https://itunes.apple.com/us/app/ok-video/id1207023470?ls=1&mt=8" class="appStoreLink">
-					<img src="img/appStoreBadge.svg" class="appStoreBadge" alt="Download on The App Store">
-				</a>
-			</div>
-			<div class="video-container muted" id="video-container">
-				<video width="240" height="520" poster="img/video.jpg" muted autoplay loop playsinline>
-					<source src="video/intro265.mp4" type="video/mp4; codecs=hevc">
-					<source src="video/intro264.mp4" type="video/mp4">
-					<source src="video/intro.webm" type="video/webm; codecs=vp9">
-					Your browser does not support the video tag.
-				</video>
-				<div class="video-overlay">
-				</div>
-			</div>
-		</section>
-
-		<spection class="description">
-			<p><strong>Tap-to-record video camera limited only by your creativity</strong></p>
-			<p>OK Video is unlimited, vine-style video recording without any editing. Easily create a vlog, a stop motion or just record whatever’s happening. After recording you can directly save it to your camera roll or send it to your favorite app. If you do need editing, like removing mistakes or reordering shots, the Timeline Editor is there to help!</p>
-			<p>Your OK Videos are exported with a small watermark at the bottom. You can remove this watermark with a single in-app purchase found in the settings menu.</p>
-		</spection>
-
-		<section class="credits">
-			<h2>Made by</h2>
-			<ul>
-				<li><a href="https://twitter.com/@pimcoumans">👨🏻‍💻 Pim Coumans</a></li>
-				<li><a href="https://www.tomdeslongchamp.com">🤹🏻‍♂️ Tom DesLongchamp</a></li>
-				<li><a href="https://shilly.co">👨🏼‍🎨 Michael Shillingburg</a></li>
-			</ul>
-			<a href="https://twitter.com/okvideoapp" class="twitterLink">
-				<img src="img/twitter.svg" class ="twitterIcon" alt="Follow OK Video on twitter">
-			</a>
-		</section>
-		<footer></footer>
-		<script type="text/javascript">
-			var container = document.getElementById('video-container');
-			var video = container.getElementsByTagName('video')[0];
-			container.onclick = function() {
-				video.muted = !video.muted;
-				console.log(video.muted);
-				console.log(container.classList);
-				if (!video.muted) {
-					video.currentTime = 0;
-					this.classList.remove('muted');
-				} else {
-					this.classList.add('muted');
-				}
-			}
-		</script>
-	</body>
+  <link rel="stylesheet" href="css/modern-normalize.css.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header>
+    <img src="img/logo.png" alt="Logo" with="180" height="180" />
+    <h1>OK Video</h1>
+    <h2>free tap-to-record camera</h2>
+    <a href="https://itunes.apple.com/us/app/ok-video/id1207023470?ls=1&mt=8" target="_blank">
+      <img src="img/appStoreBadge.svg" class="appStoreBadge" />
+    </a>
+  </header>
+  <section id="features">
+    <figure class="shoot">
+      <img src="img/features/feature1.png" alt="Hold the screen to record an OK Video" />
+      <figcaption>Record shot after shot by just holding the screen</figcaption>
+    </figure>
+    <figure class="edit">
+      <img src="img/features/feature2.png" alt="Hold it again to add a bunch more shots, no editing needed" />
+      <figcaption>No editing necessary, but available when needed</figcaption>
+    </figure>
+    <figure class="send">
+      <img src="img/features/feature3.png" alt="Send it to whatever" />
+      <figcaption>Send off to other apps with one button press</figcaption>
+    </figure>
+  </section>
+  <section id="whatisit">
+    <p>OK Video is unlimited, vine-style video recording without any editing. Easily create a vlog, a stop motion or just record whatever’s happening. After recording you can directly save it to your camera roll or send it to your favorite app. If you do need editing, like removing mistakes or reordering shots, the Timeline Editor is there to help!</p>
+  </section>
+  <footer>
+    <p>Made by your friend <a href="https://twitter.com/pimcoumans">Pim</a></p>
+    <a href="https://itunes.apple.com/us/app/ok-video/id1207023470?ls=1&mt=8" target="_blank">
+      <img src="img/appStoreBadge.svg" class="appStoreBadge" />
+    </a>
+  </footer>
+</body>
 </html>
