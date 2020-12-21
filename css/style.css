@@ -77,12 +77,10 @@ section {
 	content: '';
 	position: absolute;
 	z-index: -1;
-	padding: 12px;
 	background: conic-gradient(from 180deg at 50% 49.98%, #713BE3 -88.94deg, #950FFF 0.06deg, #390196 89.67deg, #FF22E9 180deg, #713BE3 271.06deg, #950FFF 360.06deg);
 	width: 200px;
 	height: 440px;
-	filter: blur(16px);
-	border-radius: 10px;
+	filter: blur(8px);
 }
 
 #features figure .feature-icon {
