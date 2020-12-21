@@ -22,12 +22,20 @@ h2 {
 header {
 	text-align: center;
 	padding: 5rem 0 3rem 0;
-	background: url('../img/header.svg') top center repeat-x;
-	background-size: 1140px;
+	/* background: url('../img/header.svg') top center repeat-x; */
+	/* background: conic-gradient(from 180deg at 50% 49.98%, #950FFF -4.02deg, #390196 71.25deg, #FF22E9 180deg, #713BE3 247.5deg, #950FFF 355.98deg, #390196 431.25deg), #713BE3; */
 }
+
 header:before {
 	content: '';
 	position: absolute;
+	z-index: -1;
+	display: inline-block;
+	left: -30px;
+	right: -30px;
+	top: -30px;
+	height: 500px;
+	background: conic-gradient(from 180deg at 50% 49.98%, #950FFF -4.02deg, #390196 71.25deg, #FF22E9 180deg, #713BE3 247.5deg, #950FFF 355.98deg, #390196 431.25deg), #713BE3;
 	filter: blur(27px);
 }
 
