@@ -35,7 +35,7 @@ a:hover {
 header {
 	text-align: center;
 	padding: 5rem 0 3rem 0;
-	background: url('../img/wave.png') bottom center repeat-x, linear-gradient(92.79deg, #7E2EC6 -2.39%, #B717BB 27.87%, #B717BB 46.78%, #892DC7 110.28%, #7119CB 142.85%) center center;
+	background: url('../img/wave.svg') bottom center repeat-x, linear-gradient(92.79deg, #7E2EC6 -2.39%, #B717BB 27.87%, #B717BB 46.78%, #892DC7 110.28%, #7119CB 142.85%) center center;
 	/* background: url('../img/header.svg') top center repeat-x; */
 	/* background: conic-gradient(from 180deg at 50% 49.98%, #950FFF -4.02deg, #390196 71.25deg, #FF22E9 180deg, #713BE3 247.5deg, #950FFF 355.98deg, #390196 431.25deg), #713BE3; */
 }
