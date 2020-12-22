@@ -35,11 +35,12 @@ a:hover {
 header {
 	text-align: center;
 	padding: 5rem 0 3rem 0;
+	background: url('../img/wave.png') bottom center repeat-x, linear-gradient(92.79deg, #7E2EC6 -2.39%, #B717BB 27.87%, #B717BB 46.78%, #892DC7 110.28%, #7119CB 142.85%) center center;
 	/* background: url('../img/header.svg') top center repeat-x; */
 	/* background: conic-gradient(from 180deg at 50% 49.98%, #950FFF -4.02deg, #390196 71.25deg, #FF22E9 180deg, #713BE3 247.5deg, #950FFF 355.98deg, #390196 431.25deg), #713BE3; */
 }
 
-header:before {
+/* header:before {
 	content: '';
 	position: absolute;
 	z-index: -1;
@@ -50,7 +51,7 @@ header:before {
 	height: 500px;
 	background: conic-gradient(from 180deg at 50% 49.98%, #950FFF -4.02deg, #390196 71.25deg, #FF22E9 180deg, #713BE3 247.5deg, #950FFF 355.98deg, #390196 431.25deg), #713BE3;
 	filter: blur(27px);
-}
+} */
 
 header h1, header h2 {
 	text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
@@ -164,7 +165,7 @@ footer {
 	margin-top: 3rem;
 }
 
-footer:before {
+/* footer:before {
 	content: '';
 	position: absolute;
 	z-index: -1;
@@ -174,7 +175,7 @@ footer:before {
 	height: 250px;
 	background: conic-gradient(from 180deg at 50% 49.98%, #950FFF -4.02deg, #390196 71.25deg, #FF22E9 180deg, #713BE3 247.5deg, #950FFF 355.98deg, #390196 431.25deg), #713BE3;
 	filter: blur(27px);
-}
+} */
 
 footer p {
 	font-size: 1.5rem;
