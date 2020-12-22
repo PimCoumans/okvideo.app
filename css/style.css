@@ -136,18 +136,24 @@ section {
 	font-size: 1.5rem;
 	text-align: center;
 	font-weight: 500;
+	background-position: center top;
+	background-repeat: no-repeat;
 }
 
 #features figure.shoot figcaption {
-	background: url('../img/features/feature1-icon.png') top center no-repeat;
+	background-image: url('../img/features/feature1-icon.png');
+	background-size: 32px 32px
 }
 
 #features figure.edit figcaption {
-	background: url('../img/features/feature2-icon.png') top center no-repeat;
+	background-image: url('../img/features/feature2-icon.png');
+	background-size: 35.5px 34px;
 }
 
 #features figure.send figcaption {
-	background: url('../img/features/feature3-icon.png') top center no-repeat;
+	background-image: url('../img/features/feature3-icon.png');
+	background-size: 34.5px 28.5px;
+	background-position: center 3px;
 }
 
 #whatisit {
