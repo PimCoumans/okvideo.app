@@ -1,5 +1,5 @@
 body {
-	background-color: #0C0C0C;
+	background: linear-gradient(92.79deg, #7E2EC6 -2.39%, #B717BB 27.87%, #B717BB 46.78%, #892DC7 110.28%, #7119CB 142.85%) center center;
 	color: #ffffff;
 	font-size: 16px;
 	font-family: ui-rounded, "SF Pro Rounded", system-ui, san-serif;
@@ -35,25 +35,10 @@ a:hover {
 header {
 	text-align: center;
 	padding: 5rem 0 3rem 0;
+	margin: 0;
 	background:
-		url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODY2IiBoZWlnaHQ9IjYzIiB2aWV3Qm94PSIwIDAgODY2IDYzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMCA2M0w4NjYgNjNNMCA2M0w4NjYgNjNWMTYuMTQ4NEM4NjYgMTYuMTQ4NCA2NzIgLTIwLjE4NTUgNDMzIDE2LjE0ODRDMTk0IDUyLjQ4MjMgMCAxNi4xNDg0IDAgMTYuMTQ4NEwwIDYzWiIgZmlsbD0iIzBDMEMwQyIvPgo8cGF0aCBkPSJNMCA2M0w4NjYgNjNNMCA2M0w4NjYgNjNWMTYuMTQ4NEM4NjYgMTYuMTQ4NCA2NzIgLTIwLjE4NTUgNDMzIDE2LjE0ODRDMTk0IDUyLjQ4MjMgMCAxNi4xNDg0IDAgMTYuMTQ4NEwwIDYzWiIgc3Ryb2tlPSIjMEMwQzBDIi8+Cjwvc3ZnPg==') bottom center repeat-x,
-		linear-gradient(92.79deg, #7E2EC6 -2.39%, #B717BB 27.87%, #B717BB 46.78%, #892DC7 110.28%, #7119CB 142.85%) center center;
-	/* background: url('../img/header.svg') top center repeat-x; */
-	/* background: conic-gradient(from 180deg at 50% 49.98%, #950FFF -4.02deg, #390196 71.25deg, #FF22E9 180deg, #713BE3 247.5deg, #950FFF 355.98deg, #390196 431.25deg), #713BE3; */
+		url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODY2IiBoZWlnaHQ9IjYzIiB2aWV3Qm94PSIwIDAgODY2IDYzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMCA2M0w4NjYgNjNNMCA2M0w4NjYgNjNWMTYuMTQ4NEM4NjYgMTYuMTQ4NCA2NzIgLTIwLjE4NTUgNDMzIDE2LjE0ODRDMTk0IDUyLjQ4MjMgMCAxNi4xNDg0IDAgMTYuMTQ4NEwwIDYzWiIgZmlsbD0iIzBDMEMwQyIvPgo8cGF0aCBkPSJNMCA2M0w4NjYgNjNNMCA2M0w4NjYgNjNWMTYuMTQ4NEM4NjYgMTYuMTQ4NCA2NzIgLTIwLjE4NTUgNDMzIDE2LjE0ODRDMTk0IDUyLjQ4MjMgMCAxNi4xNDg0IDAgMTYuMTQ4NEwwIDYzWiIgc3Ryb2tlPSIjMEMwQzBDIi8+Cjwvc3ZnPg==') bottom center repeat-x;
 }
-
-/* header:before {
-	content: '';
-	position: absolute;
-	z-index: -1;
-	display: inline-block;
-	left: -30px;
-	right: -30px;
-	top: -30px;
-	height: 500px;
-	background: conic-gradient(from 180deg at 50% 49.98%, #950FFF -4.02deg, #390196 71.25deg, #FF22E9 180deg, #713BE3 247.5deg, #950FFF 355.98deg, #390196 431.25deg), #713BE3;
-	filter: blur(27px);
-} */
 
 header h1, header h2 {
 	text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
@@ -82,11 +67,18 @@ a:hover .appStoreBadge {
 	transform: scale(1.2);
 }
 
+.sections {
+	background: #0C0C0C;
+	display: inline-table;
+	width: 100%;
+	padding-bottom: 3rem;
+}
+
 section {
 	display: flex;
 	flex-direction: column;
 	max-width: 900px;
-	margin: 3em auto 0 auto;
+	margin: 3em auto 3em auto;
 	padding: 0;
 }
 
@@ -170,7 +162,8 @@ footer {
 	text-align: center;
 	padding-bottom: 2rem;
 	padding-top: 8rem;
-	margin-top: 3rem;
+	
+	background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODY2IiBoZWlnaHQ9IjYzIiB2aWV3Qm94PSIwIDAgODY2IDYzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNODY2IDBMMCAwTTg2NiAwTDAgMFY0Ni44NTE2QzAgNDYuODUxNiAxOTQgODMuMTg1NSA0MzMgNDYuODUxNkM2NzIgMTAuNTE3NyA4NjYgNDYuODUxNiA4NjYgNDYuODUxNlYwWiIgZmlsbD0iIzBDMEMwQyIvPgo8cGF0aCBkPSJNODY2IDBMMCAwTTg2NiAwTDAgMFY0Ni44NTE2QzAgNDYuODUxNiAxOTQgODMuMTg1NSA0MzMgNDYuODUxNkM2NzIgMTAuNTE3NyA4NjYgNDYuODUxNiA4NjYgNDYuODUxNlYwWiIgc3Ryb2tlPSIjMEMwQzBDIi8+Cjwvc3ZnPgo=') center top repeat-x;
 }
 
 /* footer:before {
