@@ -149,9 +149,14 @@ section {
 
 #whatisit p {
 	font-size: 2.5rem;
+	line-height: 1.25em;
 	font-weight: 400;
 	padding-left: max(2rem, env(safe-area-inset-left));
 	padding-right: max(2rem, env(safe-area-inset-right));
+}
+
+#whatisit p strong {
+	font-weight: 700;
 }
 
 @media screen and (max-width: 600px) {
