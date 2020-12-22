@@ -152,7 +152,8 @@ section {
 #whatisit p {
 	font-size: 2.5rem;
 	font-weight: 400;
-	margin: 0 2rem;
+	padding-left: max(2rem, env(safe-area-inset-left));
+	padding-right: max(2rem, env(safe-area-inset-right));
 }
 
 @media screen and (max-width: 600px) {
