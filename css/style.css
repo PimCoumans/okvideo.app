@@ -75,7 +75,7 @@ a.badgeLink:hover {
 }
 
 a .appStoreBadge { 
-	transition: all 0.2s ease;
+	transition: transform 0.2s ease;
 }
 
 a:hover .appStoreBadge {
