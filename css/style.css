@@ -128,17 +128,17 @@ section {
 }
 
 #features figure.shoot figcaption {
-	background-image: url('../img/features/feature1-icon.png');
+	background-image: url('../img/features/focus-icon.png');
 	background-size: 32px 32px
 }
 
 #features figure.edit figcaption {
-	background-image: url('../img/features/feature2-icon.png');
+	background-image: url('../img/features/timeline-edit-icon.png');
 	background-size: 35.5px 34px;
 }
 
 #features figure.send figcaption {
-	background-image: url('../img/features/feature3-icon.png');
+	background-image: url('../img/features/share-icon.png');
 	background-size: 34.5px 28.5px;
 	background-position: center 3px;
 }
