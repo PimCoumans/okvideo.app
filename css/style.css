@@ -1,5 +1,14 @@
-body {
+:root {
 	font-size: 16px;
+}
+
+@media screen and (max-width: 600px) {
+	:root {
+		font-size: 12px;
+	}	
+}
+
+body {
 	font-family: ui-rounded, "SF Pro Rounded", system-ui, san-serif;
 	color: #333;
 	padding: 0;
@@ -33,6 +42,11 @@ a:visited {
 
 a:hover {
 	text-decoration: underline;
+}
+
+p {
+	margin-block-start: 0px;
+	margin-block-end: 1rem;
 }
 
 
@@ -203,13 +217,6 @@ section {
 
 #whatisit p strong {
 	font-weight: 700;
-}
-
-@media screen and (max-width: 600px) {
-	#whatisit p {
-		font-size: 1.5rem;
-		line-height: 1.5em;
-	}
 }
 
 footer {
