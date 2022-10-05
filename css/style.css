@@ -52,7 +52,8 @@ h2 {
 }
 
 a,
-a:active a:visited {
+a:active,
+a:visited {
   color: #ff3b57;
   font-weight: bolder;
   text-decoration: none;
@@ -188,7 +189,7 @@ section {
 #intro p {
   font-size: 2.5rem;
   line-height: 1.25em;
-  font-weight: 500;
+  font-weight: 400;
   padding-left: max(2rem, env(safe-area-inset-left));
   padding-right: max(2rem, env(safe-area-inset-right));
 }
@@ -204,14 +205,14 @@ section {
 #whatisit p {
   font-size: 2.5rem;
   line-height: 1.25em;
-  font-weight: 500;
+  font-weight: 400;
   padding-left: max(2rem, env(safe-area-inset-left));
   padding-right: max(2rem, env(safe-area-inset-right));
 }
 
 #whatisit p var {
   color: #888;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 2rem;
 }
 
@@ -235,7 +236,12 @@ section {
 }
 
 #whatisit p strong {
+  font-weight: 600;
+}
+
+#whatisit p strong.name {
   font-weight: 700;
+  color: rgba(255, 80, 111, 1);
 }
 
 footer {
@@ -250,5 +256,12 @@ footer {
 }
 
 footer p {
+  font-size: 1.5rem;
+}
+
+footer a,
+footer a:active,
+footer a:visited {
+  color: rgba(255, 80, 111, 1);
   font-size: 1.5rem;
 }
