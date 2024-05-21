@@ -195,13 +195,20 @@ section.feature div {
 }
 
 section.feature div h3 {
-  margin: 2em 0 0 0;
+  font-size: 3.6rem;
+  margin: 2em 0 0.5em 0;
+}
+
+section.feature div p {
+  font-size: 2.8rem;
+  margin: 0 0 1em 0;
 }
 
 @media screen and (max-width: 800px) {
   main section.feature {
     flex-direction: column;
     align-items: center;
+    padding-bottom: 2em;
   }
 
   section.feature:nth-child(even) {
@@ -219,7 +226,7 @@ section.feature div h3 {
   }
 
   section.feature div h3 {
-    margin: 0;
+    margin-top: 0;
   }
 
   section.feature:nth-child(even) figure img {
@@ -265,6 +272,15 @@ section.feature div h3 {
 .testimonial p.review:after {
   content: '”';
   color: var(--white-secondary);
+}
+
+section#whatisit {
+  background: var(--secondary-background);
+  color: var(--red);
+}
+
+section#whatisit p {
+  color: var(--red-secondary);
 }
 
 footer .centered {
