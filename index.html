@@ -53,12 +53,21 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <nav>
+    <nav class="centered large">
+      <div class="logo">
+        <a href="/">
+          <img src="img/logo.png" alt="Logo" class="logo" /> OK&nbsp;Video
+        </a>
+      </div>
       <ul>
         <li>
-          <a href="/">
-            <img src="img/logo.png" alt="Logo" class="logo" /> OK Video
-          </a>
+          <a href="#features">Features</a>
+        </li>
+        <li>
+          <a href="/Support">Support</a>
+        </li>
+        <li>
+          <a href="/Tips">Tips</a>
         </li>
         <li>
           <a href="download" target="_blank" class="badgeLink">
@@ -69,7 +78,15 @@
     </nav>
     <header>
       <h1>All video in one app</h1>
-      <h2>Record, edit, share. Making videos has never been so easy</h2>
+      <h2>
+        Record, edit, share.<br />
+        Making videos has never been so easy
+      </h2>
+      <!-- <div class="transition"> -->
+      <a href="download" target="_blank" class="badgeLink">
+        <img src="img/appStoreBadge.svg" class="appStoreBadge" />
+      </a>
+      <!-- </div> -->
     </header>
     <main>
       <section class="feature">
@@ -91,7 +108,7 @@
         </div>
       </section>
       <section class="feature">
-        <figure class="edit">
+        <figure class="edit bottom">
           <img
             src="img/features/okvideo-timeline-editor.png"
             width="400"
@@ -108,7 +125,7 @@
         </div>
       </section>
       <section class="feature">
-        <figure class="send">
+        <figure class="send bottom">
           <img
             src="img/features/okvideo-share-it-wherever.png"
             width="400"
@@ -127,10 +144,10 @@
       <section class="feature">
         <figure class="send">
           <img
-            src="img/features/okvideo-share-it-wherever.png"
+            src="img/features/okvideo-multiple-projects.png"
             width="400"
             height="875"
-            alt="Share it wherever"
+            alt="Multiple projects"
           />
         </figure>
         <div>
