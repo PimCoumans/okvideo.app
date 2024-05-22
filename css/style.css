@@ -2,30 +2,41 @@
 :root {
   --red: #ff3049;
   --red-secondary: #ff3049;
-  --secondary-background: #ffbba5;
+  --light-pink: #ffe4e8;
   --white: #ffffff;
   --white-secondary: rgba(255 255 255 / 0.75);
+  --black: black;
 }
 
 /* P3 color space */
-/* @supports (color: color(display-p3 1 1 1 / 1)) {
+@supports (color: color(display-p3 1 1 1 / 1)) {
   :root {
-    --red: color(display-p3 1 0.188 0.286);
+    --red: color(display-p3 0.985 0.19 0.236);
     --red-secondary: color(display-p3 1 0.188 0.286 / 0.75);
+    --light-pink: color(display-p3 1 0.894 0.909);
     --white: color(display-p3 1 1 1);
     --white-secondary: color(display-p3 1 1 1 / 0.75);
   }
-} */
+}
+
+:root {
+  --background: var(--light-pink);
+  --background-secondary: var(--red);
+  --text: var(--red);
+  --text-secondary: var(--red-secondary);
+}
 
 /* Fonts */
 body {
-  background-color: var(--red);
-  color: var(--white);
+  background-color: var(--background);
+  color: var(--text);
   font-family: ui-display, 'SF Pro Display', system-ui, san-serif;
 }
 
-body h1,
-nav ul li {
+h1,
+h2,
+h3,
+nav {
   font-family: ui-rounded, 'SF Pro Rounded', system-ui, san-serif;
 }
 
@@ -34,42 +45,66 @@ a {
 }
 
 /* Header */
+nav {
+  display: flex;
+  /* gap: 1em 2em; */
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+}
 
 nav ul {
-  display: flex;
-  gap: 1em 2em;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
   list-style: none;
-  margin: 0 auto;
-  max-width: 100em;
-  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em 0em;
+  margin: 0;
 }
 
-nav ul li,
-nav ul li a {
+nav ul li a,
+a.badgeLink {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  font-size: 0.75em;
+  line-height: 2em;
+  padding: 0 0.5em;
+}
+
+nav ul li a:hover {
+  color: var(--background-secondary);
+}
+
+nav a {
+  text-decoration: none;
+}
+
+/* nav ul li img.appStoreBadge {
+  height: 2em;
+  line-height: 1em;
+} */
+
+nav .logo,
+nav .logo a {
   display: flex;
   align-items: center;
 }
 
-nav ul li img {
-  height: 2em;
+nav .logo img {
+  height: 1.5em;
   width: auto;
   margin-right: 0.4em;
 }
 
-nav ul li img.logo {
+nav .logo img {
   filter: drop-shadow(0px 0px 1em rgb(255 255 255 / 0.4));
 }
 
-nav ul li img.appStoreBadge {
-  height: 1.5em;
-}
-
-nav ul li a {
+nav .logo a {
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-weight: 700;
 }
 
@@ -92,8 +127,21 @@ header h2 {
   max-width: 110rem;
   padding: 0 1em;
   margin: 0.5em auto 1em auto;
-  color: var(--white-secondary);
+  color: var(--text-secondary);
   line-height: 1.25;
+}
+
+header a.badgeLink img {
+  height: 6rem;
+}
+
+header .transition {
+  background: black;
+  background: linear-gradient(
+    180deg,
+    var(--background) 50%,
+    var(--background-secondary) 50%
+  );
 }
 
 @media screen and (min-width: 600px) {
@@ -127,6 +175,10 @@ body {
   margin: 1em auto;
 }
 
+.centered.large {
+  max-width: 100rem;
+}
+
 main section {
   margin: 1em 0;
   padding: 1em;
@@ -146,14 +198,12 @@ main section.feature {
   margin: 0;
 }
 
-section.feature:nth-child(even) {
-  background: var(--secondary-background);
-  color: var(--red);
-  flex-direction: row-reverse;
+main section.feature p {
+  color: var(--text-secondary);
 }
 
-section.feature:nth-child(even) div p {
-  color: var(--red-secondary);
+section.feature:nth-child(odd) {
+  flex-direction: row-reverse;
 }
 
 section.feature figure {
@@ -161,34 +211,42 @@ section.feature figure {
   min-height: 10em;
   min-width: 25rem;
   overflow: hidden;
-  margin: 0 1em;
+  margin: 1em;
+
+  -webkit-mask-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 30%
+  );
+  mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 30%);
 }
 
 section.feature figure img {
   width: 10em;
   height: auto;
-  border: 0.5em solid var(--secondary-background);
+  border: 0.5em solid var(--text-secondary);
   border-radius: 1.86em;
   margin: 0 auto;
   display: block;
-  /* overflow: hidden;
-  position: relative; */
 }
 
-section.feature:nth-child(odd) figure {
-  margin-top: 1em;
+section.feature figure.bottom {
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 30%
+  );
+  mask-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 30%
+  );
 }
-
-section.feature:nth-child(even) figure {
-  margin-bottom: 1em;
-}
-
-section.feature:nth-child(even) figure img {
-  border-color: var(--red);
+section.feature figure.bottom img {
   position: relative;
   bottom: 7em;
-  /* top: 0; */
 }
+
 section.feature div {
   min-width: 10rem;
   max-width: 50rem;
@@ -211,14 +269,17 @@ section.feature div p {
     padding-bottom: 2em;
   }
 
-  section.feature:nth-child(even) {
+  section.feature:nth-child(odd) {
     flex-direction: column;
   }
 
-  section.feature figure {
+  section.feature figure,
+  section.feature figure.bottom {
     overflow: visible;
     max-height: inherit;
     margin: 1em 1em 0 1em;
+    mask-image: none;
+    -webkit-mask-image: none;
   }
 
   section.feature div {
@@ -229,7 +290,7 @@ section.feature div p {
     margin-top: 0;
   }
 
-  section.feature:nth-child(even) figure img {
+  section.feature figure.bottom img {
     position: unset;
     bottom: 0;
   }
