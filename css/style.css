@@ -204,12 +204,12 @@ main section.feature p {
 
 section.feature h3 {
   font-size: 3.6rem;
-  margin: 2em 0.5em 0.5em 0.5em;
+  margin: 2em 2em 0.5em 2em;
 }
 
 section.feature p {
   font-size: 2.8rem;
-  margin: 0 0.5em 1em 0.5em;
+  margin: 0 2.5em 1em 2.5em;
 }
 
 .ui {
