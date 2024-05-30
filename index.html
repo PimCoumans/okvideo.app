@@ -64,24 +64,24 @@
           <a href="#features">Features</a>
         </li>
         <li>
-          <a href="/Support">Support</a>
+          <a href="/support">Support</a>
         </li>
         <li>
-          <a href="/Tips">Tips</a>
+          <a href="/tips">Tips</a>
         </li>
-        <li>
+        <li class="download">
+          <a href="/download">Download</a>
+        </li>
+        <!-- <li>
           <a href="download" target="_blank" class="badgeLink">
             <img src="img/appStoreBadge.svg" class="appStoreBadge" />
           </a>
-        </li>
+        </li> -->
       </ul>
     </nav>
     <header>
-      <h1>All video in one app</h1>
-      <h2>
-        Record, edit, share.<br />
-        Making videos has never been so easy
-      </h2>
+      <h1>Everything video in one little app</h1>
+      <h2>Record, edit, share. Making videos has never been so easy</h2>
       <!-- <div class="transition"> -->
       <a href="download" target="_blank" class="badgeLink">
         <img src="img/appStoreBadge.svg" class="appStoreBadge" />
@@ -90,33 +90,42 @@
     </header>
     <main>
       <section class="feature">
-        <figure class="shoot">
-          <img
-            src="img/features/okvideo-hold-the-screen-to-record.png"
-            width="400"
-            height="875"
-            alt="Hold the screen to record an OK Video"
-          />
-        </figure>
-        <div>
+        <div class="ui blue" role="presentation">
+          <div class="centered large">
+            <div class="timeline">
+              <div class="clip" style="width: 12%"></div>
+              <div class="clip" style="width: 8%"></div>
+              <div class="clip" style="width: 5%"></div>
+              <div class="clip" style="width: 15%"></div>
+              <div class="clip" style="width: 10%"></div>
+              <div class="clip recording" id="recording">
+                <span id="duration">18s</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="centered">
           <h3>Shot by shot recording</h3>
           <p>
-            Capture multiple clips, one after the other. Just hold the screen to
-            record.
+            Just hold the screen to capture multiple clips, one after the other.
           </p>
           <p>No limits, only fun</p>
         </div>
       </section>
+
       <section class="feature">
-        <figure class="edit bottom">
-          <img
-            src="img/features/okvideo-timeline-editor.png"
-            width="400"
-            height="875"
-            alt="Hold it again to add a bunch more shots, no editing needed"
-          />
-        </figure>
-        <div>
+        <div class="ui gray" role="presentation" id="editor">
+          <div class="centered large">
+            <div class="editor">
+              <div class="clip selected" style="width: 4em"></div>
+              <div class="clip" style="width: 5em"></div>
+              <div class="clip" style="width: 4em"></div>
+              <div class="clip" style="width: 6em"></div>
+              <div class="clip" style="width: 2.5em"></div>
+            </div>
+          </div>
+        </div>
+        <div class="centered">
           <h3>Editing where needed</h3>
           <p>
             In-between recording you can take the time to trim or delete your
@@ -125,15 +134,7 @@
         </div>
       </section>
       <section class="feature">
-        <figure class="send bottom">
-          <img
-            src="img/features/okvideo-share-it-wherever.png"
-            width="400"
-            height="875"
-            alt="Share it wherever"
-          />
-        </figure>
-        <div>
+        <div class="centered">
           <h3>Share with just one tap</h3>
           <p>
             When you’re done, hit the OK button to export your video and share
@@ -142,15 +143,7 @@
         </div>
       </section>
       <section class="feature">
-        <figure class="send">
-          <img
-            src="img/features/okvideo-multiple-projects.png"
-            width="400"
-            height="875"
-            alt="Multiple projects"
-          />
-        </figure>
-        <div>
+        <div class="centered">
           <h3>Not done yet? No problem</h3>
           <p>
             Works on multiple projects at time without losing your videos ever.
@@ -230,5 +223,6 @@
         </a>
       </div>
     </footer>
+    <script src="js/script.js"></script>
   </body>
 </html>
