@@ -2,10 +2,8 @@ function mapRange(min, max, progress) {
   return min + (max - min) * progress;
 }
 
-function scrollProgress(start, heightFactor = 0.65) {
-  let offset = window.scrollY - start;
-  let maxOffset = window.innerHeight * heightFactor;
-  return Math.min(1, Math.max(0, offset / maxOffset));
+function normalizedClamp(number) {
+  return Math.min(1, Math.max(0, number));
 }
 
 function getDocumentOffsetPosition(el) {
@@ -19,7 +17,20 @@ function getDocumentOffsetPosition(el) {
   return { top, left };
 }
 
+function scrollProgressForElement(element, fractionalPadding = 0.2) {
+  let { top, _ } = getDocumentOffsetPosition(element);
+  let elementCenter = top + element.offsetHeight / 2;
+  let windowPadding = window.innerHeight * (fractionalPadding / 2);
+  let padding = windowPadding + element.offsetHeight / 2;
+  let scrollOffset = window.scrollY + (window.innerHeight - padding);
+  let scrollArea = window.innerHeight - padding * 2;
+  let relativeScroll = scrollOffset - elementCenter;
+  let visibility = relativeScroll / scrollArea;
+  return normalizedClamp(visibility);
+}
+
 // Timeline updating
+const timelineElement = document.querySelector('#timeline');
 const durationLabel = document.querySelector('#duration');
 const recordingClip = document.querySelector('.clip#recording');
 
@@ -30,7 +41,7 @@ function updateTimeline() {
   const maxPercentage = 50;
   const minOffset = 0;
   const maxOffset = window.innerHeight * 0.65;
-  const progress = scrollProgress(0);
+  const progress = scrollProgressForElement(timelineElement);
 
   const duration = Math.floor(mapRange(minDuration, maxDuration, progress));
   const width = mapRange(minPercentage, maxPercentage, progress);
@@ -51,10 +62,9 @@ const editor = document.querySelector('#editor');
 function updateEditor() {
   const minIndex = 0;
   const maxIndex = clipCount - 1;
-  const offset = getDocumentOffsetPosition(editor).top - window.innerHeight;
-  const progress = scrollProgress(offset);
+  const progress = scrollProgressForElement(editor);
   const index = maxIndex - Math.floor(mapRange(minIndex, maxIndex, progress));
-  console.log(index);
+
   for (var clipIndex = 0; clipIndex < clipCount; clipIndex++) {
     const clip = editorClips[clipIndex];
     if (clipIndex == index) {
