@@ -233,12 +233,22 @@ section.feature p {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 2em;
+  align-items: center;
+  gap: 1em;
 }
 
 .ui .centered .icon {
-  width: 3em;
-  height: auto;
+  height: 3em;
+  width: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .ui .centered {
+    gap: 0.75em;
+  }
+  .ui .centered .icon {
+    height: 2.5em;
+  }
 }
 
 /* Timeline feature UI */
@@ -313,6 +323,32 @@ section.feature p {
   transform: translateZ(0);
   transition-property: transform;
   transition-duration: 0.12s;
+}
+
+.ui .editor .clip {
+  background-repeat: repeat-x;
+  background-size: 2.2em;
+  background-position-y: center;
+}
+
+.ui .editor .clip:nth-child(1) {
+  background-image: url('../img/features/Toes/cat01.jpeg');
+}
+
+.ui .editor .clip:nth-child(2) {
+  background-image: url('../img/features/Toes/cat02.jpeg');
+}
+
+.ui .editor .clip:nth-child(3) {
+  background-image: url('../img/features/Toes/cat03.jpeg');
+}
+
+.ui .editor .clip:nth-child(4) {
+  background-image: url('../img/features/Toes/cat04.jpeg');
+}
+
+.ui .editor .clip:nth-child(5) {
+  background-image: url('../img/features/Toes/cat05.jpeg');
 }
 
 .ui .editor .clip.selected {
