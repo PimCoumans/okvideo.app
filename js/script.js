@@ -75,9 +75,24 @@ function updateEditor() {
   }
 }
 
+const exporter = document.querySelector('#export');
+const exportProgress = document.querySelector('#export-progress');
+const exportLabel = document.querySelector('#export .export p');
+
+function updateExporter() {
+  const progress = scrollProgressForElement(exporter);
+  const width = progress * 100;
+  exportProgress.style.width = `${width}%`;
+  const isDone = progress == 1;
+  exportLabel.innerHTML = isDone
+    ? '&check; Done!'
+    : 'Exporting your video&hellip;';
+}
+
 function updateScrollHandler() {
   updateTimeline();
   updateEditor();
+  updateExporter();
 }
 
 document.addEventListener('scroll', updateScrollHandler);
