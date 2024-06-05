@@ -33,6 +33,7 @@ function scrollProgressForElement(element, fractionalPadding = 0.2) {
 const timelineElement = document.querySelector('#timeline');
 const durationLabel = document.querySelector('#duration');
 const recordingClip = document.querySelector('.clip#recording');
+const timelineShadow = document.querySelector('#timeline .shadow');
 
 function updateTimeline() {
   const minDuration = 5;
@@ -47,6 +48,7 @@ function updateTimeline() {
   const width = mapRange(minPercentage, maxPercentage, progress);
   durationLabel.innerHTML = `${duration}s`;
   recordingClip.style.width = `${width}%`;
+  timelineShadow.style.width = `${50 + width}%`;
 
   if (progress < 1) {
     recordingClip.classList.add('recording');
@@ -58,16 +60,25 @@ function updateTimeline() {
 const editorClips = document.querySelectorAll('.ui .editor .clip');
 const clipCount = editorClips.length;
 const editor = document.querySelector('#editor');
+const editorElement = document.querySelector('#editor .editor');
 
 function updateEditor() {
-  const minIndex = 0;
+  const minIndex = -1;
   const maxIndex = clipCount - 1;
   const progress = scrollProgressForElement(editor);
-  const index = maxIndex - Math.floor(mapRange(minIndex, maxIndex, progress));
+  const mappedIndex = Math.ceil(mapRange(minIndex, maxIndex, progress)) + 1;
+
+  const index = maxIndex - mappedIndex;
+
+  if (index == -1) {
+    editorElement.classList.add('open');
+  } else {
+    editorElement.classList.remove('open');
+  }
 
   for (var clipIndex = 0; clipIndex < clipCount; clipIndex++) {
     const clip = editorClips[clipIndex];
-    if (clipIndex == index) {
+    if (clipIndex == Math.max(0, index)) {
       clip.classList.add('selected');
     } else {
       clip.classList.remove('selected');
@@ -84,9 +95,13 @@ function updateExporter() {
   const width = progress * 100;
   exportProgress.style.width = `${width}%`;
   const isDone = progress == 1;
-  exportLabel.innerHTML = isDone
-    ? '&check; Done!'
-    : 'Exporting your video&hellip;';
+  if (isDone) {
+    exportLabel.innerHTML = '&check; Done!';
+    exportProgress.classList.add('done');
+  } else {
+    exportLabel.innerHTML = 'Exporting your video&hellip;';
+    exportProgress.classList.remove('done');
+  }
 }
 
 function updateScrollHandler() {
