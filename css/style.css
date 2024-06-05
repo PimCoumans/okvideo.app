@@ -2,6 +2,7 @@
 :root {
   --red: #ff3049;
   --red-secondary: #ff3049bf;
+  --soft-red: #ff003b;
   --light-pink: #ffe4e8;
   --white: #ffffff;
   --white-secondary: rgba(255 255 255 / 0.75);
@@ -229,6 +230,10 @@ section.feature p {
   background-color: #0e8b38;
 }
 
+.ui.black {
+  background: var(--black);
+}
+
 .ui .centered {
   display: flex;
   flex-direction: row;
@@ -256,22 +261,30 @@ section.feature p {
   display: flex;
   flex: 1;
   flex-direction: row;
+  position: relative;
   justify-content: flex-start;
   height: 1em;
   margin-bottom: 0.5em;
   border-radius: 0.5em;
-  filter: drop-shadow(0px 0.325em 0.5em rgb(0 0 0 / 0.4));
-  /* Make sure filter is properly redrawn during animation */
-  transform: translateZ(0);
   margin-bottom: 2em;
+}
+
+.ui .timeline .shadow {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  border-radius: 0.5em;
+  box-shadow: 0px 0.325em 0.5em rgb(0 0 0 / 0.4);
 }
 
 .ui .timeline .clip {
   background-color: #fafafa;
   width: 10%;
+  z-index: 1;
 }
 
-.ui .timeline .clip:first-child {
+.ui .timeline .clip:nth-child(2) {
   border-end-start-radius: 0.5em;
   border-start-start-radius: 0.5em;
 }
@@ -303,13 +316,19 @@ section.feature p {
 /* Editor feature UI */
 .ui .editor {
   display: flex;
+  flex: 1;
   flex-direction: row-reverse;
-  justify-content: end;
-  flex-wrap: wrap-reverse;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 10em 0.4em;
   height: 3.2em;
-  /* Make sure filter is properly redrawn during animation */
-  transform: translateZ(0);
+  position: relative;
+}
+
+@media screen and (max-width: 800px) {
+  .ui .editor {
+    justify-content: end;
+  }
 }
 
 .ui .editor .clip {
@@ -318,44 +337,94 @@ section.feature p {
   background-color: black;
   border-radius: 0.5em;
   border: 0.26em solid white;
-  filter: drop-shadow(0px 0.325em 0.5em rgb(0 0 0 / 0.4));
-  /* Make sure filter is properly redrawn during animation */
-  transform: translateZ(0);
-  transition-property: transform;
-  transition-duration: 0.12s;
+  box-shadow: 0px 0.325em 0.5em rgb(0 0 0 / 0.4);
+  transition: transform 0.12s ease-out, opacity 0.12s ease-out,
+    width 0.6s cubic-bezier(0.1, 1.17, 0.64, 1);
+  display: flex;
+  flex-direction: row;
+  /* align-content: center; */
+  justify-content: center;
+  overflow: hidden;
 }
 
 .ui .editor .clip {
   background-repeat: repeat-x;
-  background-size: 2.2em;
+  background-size: 2.3em;
   background-position-y: center;
 }
 
 .ui .editor .clip:nth-child(1) {
+  width: 4em;
   background-image: url('../img/features/Toes/cat01.jpeg');
 }
 
 .ui .editor .clip:nth-child(2) {
+  width: 5em;
   background-image: url('../img/features/Toes/cat02.jpeg');
 }
 
 .ui .editor .clip:nth-child(3) {
+  width: 4em;
   background-image: url('../img/features/Toes/cat03.jpeg');
 }
 
 .ui .editor .clip:nth-child(4) {
+  width: 3em;
   background-image: url('../img/features/Toes/cat04.jpeg');
 }
 
 .ui .editor .clip:nth-child(5) {
+  width: 2.5em;
   background-image: url('../img/features/Toes/cat05.jpeg');
 }
 
 .ui .editor .clip.selected {
   transform: translateY(-1em);
-  border-color: var(--red);
-  filter: drop-shadow(0px 0.325em 0.5em var(--red-secondary));
-  /* top: -1em; */
+  border-color: var(--soft-red);
+  box-shadow: 0px 0.325em 0.5em rgb(255 0 59 / 0.67);
+}
+
+.ui .editor.open .clip {
+  opacity: 0.25;
+}
+
+.ui .editor.open .clip.selected {
+  opacity: 1;
+  width: 10em;
+  border-color: var(--white);
+  box-shadow: 0px 0.325em 0.5em rgb(0 0 0 / 0.2);
+  border-width: 0;
+}
+
+.ui .editor .clip div {
+  opacity: 0;
+  height: 100%;
+}
+
+.ui .editor.open .clip.selected div {
+  opacity: 1;
+}
+
+.ui .editor .clip .dim {
+  background: rgb(0 0 0 / 0.5);
+  flex: 1;
+}
+
+.ui .editor .clip .trim-border {
+  border-radius: 0.5em;
+  border: 0.26em solid var(--soft-red);
+  border-width: 0.26em 0.8em;
+  width: 100%;
+  margin-left: -0.8em;
+  margin-right: -0.8em;
+  z-index: 1;
+  transition: width 0.6s cubic-bezier(0.1, 1.17, 0.64, 1),
+    border-color 0.12s ease-out;
+}
+
+.ui .editor.open .clip .trim-border {
+  border-color: var(--white);
+  width: 5em;
 }
 
 /* Share UI */
@@ -367,6 +436,8 @@ section.feature p {
   color: var(--white);
   margin: 0;
   margin-bottom: 0.5em;
+  text-shadow: rgba(0 0 0 / 0.25) 0 0.2em 0.2em;
+  font-weight: 500;
 }
 
 .ui .export .bar {
@@ -380,8 +451,13 @@ section.feature p {
   display: block;
   height: 100%;
   width: 1%;
+  min-width: 0.5em;
   background-color: var(--red-secondary);
   border-radius: inherit;
+}
+
+.ui .export .bar .progress.done {
+  background-color: #0e8b38;
 }
 
 .testimonial {
