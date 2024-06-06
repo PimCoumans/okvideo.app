@@ -201,15 +201,18 @@ section.feature {
 }
 
 section.feature .body {
+  font-size: 4rem;
   padding: 0 2em;
+}
+
+@media screen and (max-width: 600px) {
+  section.feature .body {
+    padding: 0 1em;
+  }
 }
 
 section.feature p {
   color: var(--text-secondary);
-}
-
-section.feature .body {
-  font-size: 4rem;
 }
 
 section.feature h3 {
@@ -231,11 +234,6 @@ section.feature p {
   section.feature .body {
     font-size: 6rem;
   }
-}
-
-section.feature p {
-  /* font-size: 2.8rem; */
-  /* margin: 0 2.5em 1em 2.5em; */
 }
 
 .ui {
