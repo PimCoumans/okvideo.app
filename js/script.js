@@ -32,7 +32,7 @@ function scrollProgressForElement(
   let scrollArea = window.innerHeight - padding * 2;
   let relativeScroll = scrollOffset - elementCenter;
   let visibility = relativeScroll / scrollArea;
-  return normalizedClamp(visibility);
+  return visibility;
 }
 
 // Timeline updating
@@ -49,6 +49,9 @@ function updateTimeline() {
   const minOffset = 0;
   const maxOffset = window.innerHeight * 0.65;
   const progress = scrollProgressForElement(timelineElement);
+  if (progress > 1 || progress < 0) {
+    return;
+  }
 
   const duration = Math.floor(mapRange(minDuration, maxDuration, progress));
   const width = mapRange(minPercentage, maxPercentage, progress);
@@ -72,6 +75,10 @@ function updateEditor() {
   const minIndex = -1;
   const maxIndex = clipCount - 1;
   const progress = scrollProgressForElement(editor);
+  if (progress > 1 || progress < 0) {
+    return;
+  }
+
   const mappedIndex = Math.ceil(mapRange(minIndex, maxIndex, progress)) + 1;
 
   const index = maxIndex - mappedIndex;
@@ -93,11 +100,11 @@ function updateEditor() {
 }
 
 const exporter = document.querySelector('#export');
-const exportProgress = document.querySelector('#export-progress');
-const exportLabel = document.querySelector('#export .export p');
+const exportProgress = exporter.querySelector('#export-progress');
+const exportLabel = exporter.querySelector('.export p');
 
 function updateExporter() {
-  const progress = scrollProgressForElement(exporter);
+  const progress = normalizedClamp(scrollProgressForElement(exporter));
   const width = progress * 100;
   exportProgress.style.width = `${width}%`;
   const isDone = progress == 1;
@@ -110,10 +117,23 @@ function updateExporter() {
   }
 }
 
+const projects = document.querySelector('#projects');
+const projectsElement = projects.querySelector('.centered');
+
+function updateProjects() {
+  const progress = scrollProgressForElement(projects, -0.2, 0);
+  if (progress > 1 || progress < 0) {
+    return;
+  }
+  const percentage = mapRange(15, 90, progress);
+  projectsElement.style.backgroundPosition = `center ${percentage}%`;
+}
+
 function updateScrollHandler() {
   updateTimeline();
   updateEditor();
   updateExporter();
+  updateProjects();
 }
 
 document.addEventListener('scroll', updateScrollHandler);
