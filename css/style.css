@@ -256,6 +256,12 @@ section.feature p {
   }
 }
 
+@media screen and (max-width: 400px) {
+  .ui .centered .icon {
+    display: none;
+  }
+}
+
 /* Timeline feature UI */
 .ui .timeline {
   display: flex;
@@ -303,6 +309,11 @@ section.feature p {
   background-color: var(--red);
 }
 
+.ui .timeline .clip.recording,
+.ui .timeline .shadow {
+  transition: width 0.1s ease-out;
+}
+
 .ui .timeline .clip #duration {
   color: var(--white);
   display: block;
@@ -328,6 +339,10 @@ section.feature p {
 @media screen and (max-width: 800px) {
   .ui .editor {
     justify-content: end;
+  }
+
+  .ui .editor {
+    font-size: 0.8em;
   }
 }
 
