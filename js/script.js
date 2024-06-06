@@ -17,12 +17,18 @@ function getDocumentOffsetPosition(el) {
   return { top, left };
 }
 
-function scrollProgressForElement(element, fractionalPadding = 0.2) {
+function scrollProgressForElement(
+  element,
+  fractionalPadding = 0.2,
+  offset = 0.15
+) {
   let { top, _ } = getDocumentOffsetPosition(element);
   let elementCenter = top + element.offsetHeight / 2;
   let windowPadding = window.innerHeight * (fractionalPadding / 2);
+  let windowOffset = window.innerHeight * offset;
   let padding = windowPadding + element.offsetHeight / 2;
-  let scrollOffset = window.scrollY + (window.innerHeight - padding);
+  let scrollOffset =
+    window.scrollY + (window.innerHeight - padding) + windowOffset;
   let scrollArea = window.innerHeight - padding * 2;
   let relativeScroll = scrollOffset - elementCenter;
   let visibility = relativeScroll / scrollArea;

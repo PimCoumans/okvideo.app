@@ -266,7 +266,7 @@ section.feature p {
   height: 1em;
   margin-bottom: 0.5em;
   border-radius: 0.5em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .ui .timeline .shadow {
@@ -420,6 +420,31 @@ section.feature p {
   z-index: 1;
   transition: width 0.6s cubic-bezier(0.1, 1.17, 0.64, 1),
     border-color 0.12s ease-out;
+  position: relative;
+}
+
+.ui .editor .clip .trim-border:before {
+  content: '';
+  display: block;
+  width: 0.2em;
+  height: 1.74em;
+  left: -0.5em;
+  top: 0.48em;
+  position: absolute;
+  border-radius: 0.1em;
+  background: #777;
+}
+
+.ui .editor .clip .trim-border:after {
+  content: '';
+  display: block;
+  width: 0.2em;
+  height: 1.74em;
+  right: -0.5em;
+  top: 0.48em;
+  position: absolute;
+  border-radius: 0.1em;
+  background: #777;
 }
 
 .ui .editor.open .clip .trim-border {
