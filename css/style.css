@@ -102,6 +102,15 @@ nav ul li a:hover {
   color: var(--background-secondary);
 }
 
+nav ul li.download a:hover {
+  color: var(--white);
+  background-color: var(--red-secondary);
+}
+
+nav ul li.download a:active {
+  background-color: var(--black);
+}
+
 nav a {
   text-decoration: none;
 }
@@ -299,7 +308,7 @@ section p {
 }
 
 .ui .timeline .shadow {
-  width: 50%;
+  width: 60%;
   height: 100%;
   position: absolute;
   z-index: 0;
@@ -536,6 +545,7 @@ section p {
   background: linear-gradient(0deg, #000 0%, #0000 14%, #0000 86%, #000 100%),
     no-repeat center/50% url('../img/features/okvideo-multiple-projects.png'),
     black;
+  background-position-y: 15%;
 }
 .ui .projects {
   margin: 0;
