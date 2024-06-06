@@ -17,29 +17,33 @@ function getDocumentOffsetPosition(el) {
   return { top, left };
 }
 
+function getScreenHeight() {
+  return window.innerHeight;
+}
+
 function scrollProgressForElement(
   element,
   fractionalPadding = 0.2,
   offset = 0.15
 ) {
   let { top, _ } = getDocumentOffsetPosition(element);
-  let elementCenter = top + element.offsetHeight / 2;
-  let windowPadding = window.innerHeight * (fractionalPadding / 2);
-  let windowOffset = window.innerHeight * offset;
-  let padding = windowPadding + element.offsetHeight / 2;
-  let scrollOffset =
-    window.scrollY + (window.innerHeight - padding) + windowOffset;
-  let scrollArea = window.innerHeight - padding * 2;
-  let relativeScroll = scrollOffset - elementCenter;
-  let visibility = relativeScroll / scrollArea;
+  const screenHeight = getScreenHeight();
+  const elementCenter = top + element.offsetHeight / 2;
+  const windowPadding = screenHeight * (fractionalPadding / 2);
+  const windowOffset = screenHeight * offset;
+  const padding = windowPadding + element.offsetHeight / 2;
+  const scrollOffset = window.scrollY + (screenHeight - padding) + windowOffset;
+  const scrollArea = screenHeight - padding * 2;
+  const relativeScroll = scrollOffset - elementCenter;
+  const visibility = relativeScroll / scrollArea;
   return visibility;
 }
 
 // Timeline updating
 const timelineElement = document.querySelector('#timeline');
-const durationLabel = document.querySelector('#duration');
-const recordingClip = document.querySelector('.clip#recording');
-const timelineShadow = document.querySelector('#timeline .shadow');
+const durationLabel = timelineElement.querySelector('#duration');
+const recordingClip = timelineElement.querySelector('.clip#recording');
+const timelineShadow = timelineElement.querySelector('.shadow');
 
 function updateTimeline() {
   const minDuration = 5;
@@ -49,6 +53,13 @@ function updateTimeline() {
   const minOffset = 0;
   const maxOffset = window.innerHeight * 0.65;
   const progress = scrollProgressForElement(timelineElement);
+
+  if (progress < 1) {
+    recordingClip.classList.add('recording');
+  } else {
+    recordingClip.classList.remove('recording');
+  }
+
   if (progress > 1 || progress < 0) {
     return;
   }
@@ -58,12 +69,6 @@ function updateTimeline() {
   durationLabel.innerHTML = `${duration}s`;
   recordingClip.style.width = `${width}%`;
   timelineShadow.style.width = `${50 + width}%`;
-
-  if (progress < 1) {
-    recordingClip.classList.add('recording');
-  } else {
-    recordingClip.classList.remove('recording');
-  }
 }
 
 const editorClips = document.querySelectorAll('.ui .editor .clip');
@@ -72,14 +77,15 @@ const editor = document.querySelector('#editor');
 const editorElement = document.querySelector('#editor .editor');
 
 function updateEditor() {
-  const minIndex = -1;
-  const maxIndex = clipCount - 1;
+  const minIndex = 0;
+  const maxIndex = clipCount + 2;
   const progress = scrollProgressForElement(editor);
   if (progress > 1 || progress < 0) {
     return;
   }
 
   const mappedIndex = Math.ceil(mapRange(minIndex, maxIndex, progress)) + 1;
+  console.log(mappedIndex);
 
   const index = maxIndex - mappedIndex;
 
