@@ -196,7 +196,7 @@ main section p {
 }
 
 main section.feature {
-  min-height: 60vh;
+  min-height: 50vh;
 }
 
 main section.feature p {
@@ -353,7 +353,7 @@ section.feature p {
   border-radius: 0.5em;
   border: 0.26em solid white;
   box-shadow: 0px 0.325em 0.5em rgb(0 0 0 / 0.4);
-  transition: transform 0.12s ease-out, opacity 0.12s ease-out,
+  transition: transform 0.21s ease-out, opacity 0.12s ease-out,
     width 0.6s cubic-bezier(0.1, 1.17, 0.64, 1);
   display: flex;
   flex-direction: row;
@@ -475,7 +475,8 @@ section.feature p {
 .ui .export p {
   color: var(--white);
   margin: 0;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.75em;
+  font-size: 1em;
   text-shadow: rgba(0 0 0 / 0.25) 0 0.2em 0.2em;
   font-weight: 500;
 }
@@ -483,7 +484,7 @@ section.feature p {
 .ui .export .bar {
   display: block;
   height: 0.5em;
-  background: #d9d9d927;
+  background: #d9d9d968;
   border-radius: 0.25em;
 }
 
@@ -498,6 +499,27 @@ section.feature p {
 
 .ui .export .bar .progress.done {
   background-color: #0e8b38;
+}
+
+/* Projects */
+.ui#projects {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.ui#projects .centered {
+  margin-top: 0;
+  margin-bottom: 0;
+  background: linear-gradient(0deg, #000 0%, #0000 14%, #0000 86%, #000 100%),
+    no-repeat center/50% url('../img/features/okvideo-multiple-projects.png'),
+    black;
+}
+.ui .projects {
+  margin: 0;
+  min-height: 8em;
+  flex: 1;
+  /* background-size: 20em;
+  background-repeat: no-repeat;
+  background-position: center 10%; */
 }
 
 .testimonial {
