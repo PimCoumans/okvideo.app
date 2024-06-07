@@ -7,6 +7,8 @@
   --white: #ffffff;
   --white-secondary: rgba(255 255 255 / 0.75);
   --black: black;
+  --light-gray: #e3e3e3;
+  --dark-gray: #393939;
 }
 
 /* P3 color space */
@@ -63,6 +65,10 @@ a {
 .centered {
   max-width: 70rem;
   margin: 1em auto;
+}
+
+.centered.medium {
+  max-width: 85rem;
 }
 
 .centered.large {
@@ -195,8 +201,12 @@ header h2 {
   line-height: 1.25;
 }
 
-a.badgeLink img {
+header a.badgeLink img {
   height: 6rem;
+}
+
+a.badgeLink img {
+  height: 4em;
 }
 
 @media screen and (min-width: 600px) {
@@ -570,62 +580,56 @@ section p {
   background-position: center 10%; */
 }
 
+section.download {
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+
 /* Testimonials */
+.testimonials {
+  background-color: var(--white);
+  padding: 0.5em;
+}
+
 section .body h2 {
   font-size: 1.2em;
-  margin: 0 1em;
+  margin: 0 0.5em;
 }
 
 .testimonial {
+  background-color: var(--light-gray);
   /* color: var(--red); */
-  margin: 2em 1em 2em 1em;
+  margin: 1em;
+  padding: 0.75em;
+  border-radius: 0.75em;
 }
 
 .testimonial p {
   font-size: 0.55em;
   margin: 0;
-}
-
-.testimonial p.review {
-  /* padding: 0 1em; */
-  position: relative;
+  color: var(--black);
+  font-weight: 300;
 }
 
 .testimonial p.source {
   margin-top: 0.5em;
-  padding-left: 1em;
-  font-size: 0.45em;
-  color: var(--text-secondary);
+  font-size: 0.36em;
+  color: var(--dark-gray);
 }
 
 .testimonial p.source strong {
-  /* color: var(--white); */
+  font-weight: 500;
 }
 
-.testimonial p.source:before {
-  content: '— ';
+.explanation {
+  /* background: var(--red); */
+  color: var(--black);
 }
 
-.testimonial p.review:before {
-  content: '“';
-  position: absolute;
-  left: -0.5em;
-  color: var(--red-secondary);
-}
-.testimonial p.review:after {
-  content: '”';
-  color: var(--red-secondary);
+.explanation p {
+  margin: 1em;
 }
 
-section#whatisit {
-  background: var(--secondary-background);
-  color: var(--red);
-}
-
-section#whatisit p {
-  color: var(--red-secondary);
-}
-
-footer .centered {
+.explenation footer .centered {
   text-align: center;
 }
