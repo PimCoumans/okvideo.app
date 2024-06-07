@@ -55,7 +55,8 @@ body {
 h1,
 h2,
 h3,
-nav {
+nav,
+p strong {
   font-family: ui-rounded, 'SF Pro Rounded', system-ui, san-serif;
 }
 
@@ -593,6 +594,7 @@ section p {
 section.download {
   margin-top: 0;
   margin-bottom: 2em;
+  text-align: center;
 }
 
 /* Testimonials */
@@ -639,6 +641,7 @@ section .body h2 {
 .explanation p {
   margin: 1em;
 }
+
 /* Footer */
 footer {
   margin-top: 3em;
