@@ -59,6 +59,12 @@ nav {
   font-family: ui-rounded, 'SF Pro Rounded', system-ui, san-serif;
 }
 
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
 a {
   color: inherit;
 }
@@ -103,14 +109,17 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: center;
-  gap: 1em 0em;
+  align-content: end;
+  flex-wrap: wrap-reverse;
+  gap: 2em 0.2em;
   margin: 0;
+  overflow: hidden;
+  height: 1.5em;
 }
 
-nav ul li a,
-a.badgeLink {
+nav ul li a {
   display: flex;
   align-content: center;
   justify-content: center;
