@@ -60,6 +60,22 @@ a {
   color: inherit;
 }
 
+.centered {
+  max-width: 70rem;
+  margin: 1em auto;
+}
+
+.centered.large {
+  max-width: 100rem;
+}
+
+@supports (padding-left: env(safe-area-inset-left)) {
+  .centered {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
 /* Header */
 nav {
   display: flex;
@@ -68,6 +84,13 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 1em;
+}
+
+@supports (padding-left: env(safe-area-inset-left)) {
+  nav.centered.large {
+    padding-left: max(1em, env(safe-area-inset-left));
+    padding-right: max(1em, env(safe-area-inset-right));
+  }
 }
 
 nav ul {
@@ -186,15 +209,6 @@ a.badgeLink img {
   header {
     font-size: 10rem;
   }
-}
-
-.centered {
-  max-width: 70rem;
-  margin: 1em auto;
-}
-
-.centered.large {
-  max-width: 100rem;
 }
 
 main section {
