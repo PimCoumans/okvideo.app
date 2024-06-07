@@ -3,6 +3,7 @@
   --red: #ff3049;
   --red-secondary: #ff3049bf;
   --soft-red: #ff003b;
+  --dark-red: #461119;
   --light-pink: #ffe4e8;
   --white: #ffffff;
   --white-secondary: rgba(255 255 255 / 0.75);
@@ -623,13 +624,19 @@ section .body h2 {
 
 .explanation {
   /* background: var(--red); */
-  color: var(--black);
+  color: var(--dark-red);
 }
 
 .explanation p {
   margin: 1em;
 }
-
-.explenation footer .centered {
+/* Footer */
+footer {
+  margin-top: 3em;
+}
+footer .centered {
   text-align: center;
+}
+footer div.centered {
+  padding: 2em 1em;
 }
