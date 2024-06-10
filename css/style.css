@@ -132,7 +132,7 @@ nav ul li a {
 nav ul li.download a {
   font-weight: 700;
   color: var(--white);
-  background-color: var(--red);
+  background-color: var(--soft-red);
   border-radius: 0.6em;
   padding: 0 0.86em;
   margin-left: 0.5em;
@@ -144,7 +144,7 @@ nav ul li a:hover {
 
 nav ul li.download a:hover {
   color: var(--white);
-  background-color: var(--red-secondary);
+  background-color: var(--red);
 }
 
 nav ul li.download a:active {
@@ -170,6 +170,7 @@ nav .logo img {
   height: 1.5em;
   width: auto;
   margin-right: 0.4em;
+  border-radius: 0.32em;
 }
 
 nav .logo img {
