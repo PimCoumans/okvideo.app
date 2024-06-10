@@ -46,7 +46,7 @@ const recordingClip = timelineElement.querySelector('.clip#recording');
 const timelineShadow = timelineElement.querySelector('.shadow');
 
 function updateTimeline() {
-  const minDuration = 5;
+  const minDuration = 11;
   const maxDuration = 20;
   const minPercentage = 10;
   const maxPercentage = 50;
@@ -131,8 +131,26 @@ function updateProjects() {
   if (progress > 1 || progress < 0) {
     return;
   }
-  const percentage = mapRange(15, 90, progress);
+  const percentage = mapRange(0, 90, progress);
   projectsElement.style.backgroundPosition = `center ${percentage}%`;
+}
+
+const privacy = document.querySelector('#privacy');
+const clouds = privacy.querySelectorAll('.cloud');
+
+function updatePrivacy() {
+  console.log('TEST');
+
+  const progress = scrollProgressForElement(privacy, -0.4, 0);
+  if (progress > 1 || progress < 0) {
+    return;
+  }
+  const offset = mapRange(50, 0, progress);
+  const multipliedOffset = mapRange(70, -20, progress);
+  clouds.forEach((cloud, index) => {
+    const translation = index > 1 ? multipliedOffset : offset;
+    cloud.style.transform = `translateX(${translation}%`;
+  });
 }
 
 function updateScrollHandler() {
@@ -140,6 +158,7 @@ function updateScrollHandler() {
   updateEditor();
   updateExporter();
   updateProjects();
+  updatePrivacy();
 }
 
 document.addEventListener('scroll', updateScrollHandler);

@@ -563,6 +563,7 @@ section p {
   min-width: 0.5em;
   background-color: var(--red-secondary);
   border-radius: inherit;
+  transition: width 0.12s ease-out;
 }
 
 .ui .export .bar .progress.done {
@@ -581,14 +582,49 @@ section p {
     no-repeat center/50% url('../img/features/okvideo-multiple-projects.png'),
     black;
   background-position-y: 15%;
+  transition: background-position-y 0.12s ease-out;
 }
 .ui .projects {
   margin: 0;
   min-height: 8em;
   flex: 1;
-  /* background-size: 20em;
-  background-repeat: no-repeat;
-  background-position: center 10%; */
+}
+
+/* Privacy */
+.ui .clouds {
+  flex: 1;
+  position: relative;
+  min-height: 6em;
+}
+
+.ui .clouds .cloud {
+  position: absolute;
+  top: -0.1em;
+  transition: transform 0.12s ease-out;
+}
+
+.ui .clouds .cloud:nth-child(-n + 2) {
+  font-size: 5em;
+  opacity: 0.5;
+}
+
+.ui .clouds .cloud:nth-last-child(-n + 2) {
+  font-size: 8em;
+}
+
+.ui .clouds .cloud:nth-child(1) {
+  left: 1em;
+}
+
+.ui .clouds .cloud:nth-child(2) {
+  left: 3em;
+}
+
+.ui .clouds .cloud:nth-child(3) {
+  left: 0.2em;
+}
+.ui .clouds .cloud:nth-child(4) {
+  left: 2em;
 }
 
 section.download {
