@@ -636,7 +636,7 @@ section.download {
 /* Testimonials */
 .testimonials {
   background-color: var(--white);
-  padding: 0.5em;
+  padding: 0.25em;
 }
 
 section .body h2 {
@@ -645,9 +645,38 @@ section .body h2 {
 }
 
 .testimonial {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 1em;
+  gap: 0.25em;
+}
+
+.testimonial:nth-child(odd) {
+  margin-left: 0.5em;
+}
+
+.testimonial:nth-child(odd) .review {
+  border-bottom-left-radius: 0em;
+}
+
+.testimonial:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.testimonial:nth-child(even) .review {
+  border-bottom-right-radius: 0em;
+}
+
+.testimonial img.avatar {
+  height: 1em;
+  width: 1em;
+  border-radius: 0.5em;
+}
+
+.testimonial .review {
   background-color: var(--light-gray);
   /* color: var(--red); */
-  margin: 1em;
   padding: 0.75em;
   border-radius: 0.75em;
 }
@@ -657,6 +686,20 @@ section .body h2 {
   margin: 0;
   color: var(--black);
   font-weight: 300;
+}
+
+.testimonial p .more,
+.testimonial p .link-less {
+  display: none;
+}
+
+.testimonial p.expanded .more,
+.testimonial p.expanded .link-less {
+  display: inline;
+}
+
+.testimonial p.expanded .link-more {
+  display: none;
 }
 
 .testimonial p.source {

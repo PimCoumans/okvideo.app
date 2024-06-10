@@ -139,8 +139,6 @@ const privacy = document.querySelector('#privacy');
 const clouds = privacy.querySelectorAll('.cloud');
 
 function updatePrivacy() {
-  console.log('TEST');
-
   const progress = scrollProgressForElement(privacy, -0.4, 0);
   if (progress > 1 || progress < 0) {
     return;
@@ -164,3 +162,23 @@ function updateScrollHandler() {
 document.addEventListener('scroll', updateScrollHandler);
 document.addEventListener('resize', updateScrollHandler);
 updateScrollHandler();
+
+// Testimonials
+const testimonials = document.querySelectorAll(
+  '#testimonials .testimonial .review > p'
+);
+testimonials.forEach(testimonial => {
+  console.log(testimonial);
+  const moreLink = testimonial.querySelector('a.link-more');
+  const lessLink = testimonial.querySelector('a.link-less');
+  if (moreLink) {
+    moreLink.addEventListener('click', event => {
+      testimonial.classList.add('expanded');
+    });
+  }
+  if (lessLink) {
+    lessLink.addEventListener('click', event => {
+      testimonial.classList.remove('expanded');
+    });
+  }
+});
