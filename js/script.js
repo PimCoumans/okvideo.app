@@ -174,11 +174,13 @@ testimonials.forEach(testimonial => {
   if (moreLink) {
     moreLink.addEventListener('click', event => {
       testimonial.classList.add('expanded');
+      event.preventDefault();
     });
   }
   if (lessLink) {
     lessLink.addEventListener('click', event => {
       testimonial.classList.remove('expanded');
+      event.preventDefault();
     });
   }
 });
