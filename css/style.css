@@ -593,6 +593,7 @@ section p {
   padding-top: 0;
   padding-bottom: 0;
 }
+
 .ui#projects .centered {
   margin-top: 0;
   margin-bottom: 0;
@@ -601,6 +602,7 @@ section p {
   background-position-y: 0%;
   transition: background-position-y 0.12s ease-out;
 }
+
 .ui .projects {
   margin: 0;
   min-height: 8em;
@@ -611,22 +613,23 @@ section p {
 .ui .clouds {
   flex: 1;
   position: relative;
-  min-height: 6em;
+  min-height: 3em;
 }
 
 .ui .clouds .cloud {
   position: absolute;
-  top: -0.1em;
+  top: -0.24em;
   transition: transform 0.12s ease-out;
 }
 
 .ui .clouds .cloud:nth-child(-n + 2) {
-  font-size: 5em;
+  font-size: 3em;
   opacity: 0.5;
+  top: -0.1em;
 }
 
 .ui .clouds .cloud:nth-last-child(-n + 2) {
-  font-size: 8em;
+  font-size: 5em;
 }
 
 .ui .clouds .cloud:nth-child(1) {
@@ -634,7 +637,7 @@ section p {
 }
 
 .ui .clouds .cloud:nth-child(2) {
-  left: 3em;
+  left: 4em;
 }
 
 .ui .clouds .cloud:nth-child(3) {
