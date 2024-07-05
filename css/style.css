@@ -213,6 +213,23 @@ header h2 {
   line-height: 1.25;
 }
 
+/* header figure {
+  max-height: 10em;
+} */
+
+header figure {
+  padding: 0;
+}
+
+header figure img {
+  max-width: 5em;
+  margin: 0;
+
+  border: solid var(--background) 0.18em;
+  border-radius: 0.75em;
+  box-shadow: rgba(0 0 0 / 0.25) 0 0.1em 0.3em;
+}
+
 header a.badgeLink img {
   height: 6rem;
 }
