@@ -131,7 +131,7 @@ function updateProjects() {
   if (progress > 1 || progress < 0) {
     return;
   }
-  const percentage = mapRange(0, 90, progress);
+  const percentage = mapRange(0, 100, progress);
   projectsElement.style.backgroundPosition = `center ${percentage}%`;
 }
 

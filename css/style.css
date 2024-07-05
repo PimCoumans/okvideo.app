@@ -597,8 +597,7 @@ section p {
   margin-top: 0;
   margin-bottom: 0;
   background: linear-gradient(0deg, #000 0%, #0000 14%, #0000 86%, #000 100%),
-    no-repeat center/50% url('../img/features/okvideo-multiple-projects.png'),
-    black;
+    no-repeat center/50% url('../img/features/okvideo-projects.jpeg'), black;
   background-position-y: 0%;
   transition: background-position-y 0.12s ease-out;
 }
