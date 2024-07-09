@@ -71,6 +71,55 @@ function updateTimeline() {
   timelineShadow.style.width = `${50 + width}%`;
 }
 
+const exporter = document.querySelector('#export');
+const exportProgressBar = exporter.querySelector('#export-progress');
+const exportLabel = exporter.querySelector('.export p');
+const exportBar = exporter.querySelector('.export .bar');
+const appsContainer = exporter.querySelector('.apps');
+const apps = appsContainer.querySelectorAll('img');
+
+function updateExportBar(progress) {
+  const width = mapRange(30, 100, progress);
+  exportProgressBar.style.width = `${width}%`;
+  const isDone = progress >= 1;
+  if (isDone) {
+    exportLabel.innerHTML = '&check; Done!';
+    exportProgressBar.classList.add('done');
+  } else {
+    exportLabel.innerHTML = 'Exporting your video&hellip;';
+    exportProgressBar.classList.remove('done');
+  }
+}
+
+function updateApps(progress) {
+  let appIndex = Math.floor(mapRange(0, apps.length, progress));
+  for (var index = 0; index < apps.length; index++) {
+    const app = apps[index];
+    if (index <= appIndex) {
+      app.classList.add('popped');
+    } else {
+      app.classList.remove('popped');
+    }
+  }
+}
+
+function updateExporter() {
+  const appOffset = 0.55;
+  const exportPeriod = 0.5;
+  const progress = scrollProgressForElement(exporter);
+  if (progress < appOffset) {
+    exportLabel.style.opacity = '1';
+    exportBar.style.opacity = '1';
+  } else {
+    exportLabel.style.opacity = '0.1';
+    exportBar.style.opacity = '0.1';
+  }
+  const exportProgress = normalizedClamp(progress / exportPeriod);
+  updateExportBar(exportProgress);
+  const appProgress = (progress - appOffset) / (1 - appOffset);
+  updateApps(appProgress);
+}
+
 const editorClips = document.querySelectorAll('.ui .editor .clip');
 const clipCount = editorClips.length;
 const editor = document.querySelector('#editor');
@@ -105,24 +154,6 @@ function updateEditor() {
   }
 }
 
-const exporter = document.querySelector('#export');
-const exportProgress = exporter.querySelector('#export-progress');
-const exportLabel = exporter.querySelector('.export p');
-
-function updateExporter() {
-  const progress = normalizedClamp(scrollProgressForElement(exporter));
-  const width = progress * 100;
-  exportProgress.style.width = `${width}%`;
-  const isDone = progress == 1;
-  if (isDone) {
-    exportLabel.innerHTML = '&check; Done!';
-    exportProgress.classList.add('done');
-  } else {
-    exportLabel.innerHTML = 'Exporting your video&hellip;';
-    exportProgress.classList.remove('done');
-  }
-}
-
 const projects = document.querySelector('#projects');
 const projectsElement = projects.querySelector('.centered');
 
@@ -148,7 +179,6 @@ function updatePrivacy() {
   clouds.forEach((cloud, index) => {
     const translation = index > 1 ? multipliedOffset : offset;
     cloud.style.transform = `translateX(${translation}%`;
-    console.log(cloud.style.transform);
   });
 }
 

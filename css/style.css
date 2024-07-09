@@ -556,6 +556,7 @@ section p {
 .ui .export {
   flex: 1;
   margin: 0 1em;
+  position: relative;
 }
 
 .ui .export p {
@@ -586,6 +587,36 @@ section p {
 
 .ui .export .bar .progress.done {
   background-color: #0e8b38;
+}
+
+.ui .export .apps {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  max-height: 3em;
+  justify-content: space-around;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  padding-left: 3em;
+  /* background: gray; */
+}
+
+.ui .export .apps img {
+  width: 10vw;
+  max-width: 3em;
+  height: auto;
+  border-radius: 20%;
+  opacity: 0;
+  background: white;
+  transform: scale(0.25) translateY(12em);
+  transition: transform 0.5s cubic-bezier(0.1, 1.17, 0.64, 1),
+    opacity 0.2s ease-out;
+}
+
+.ui .export .apps img.popped {
+  opacity: 1;
+  transform: none;
 }
 
 /* Projects */
