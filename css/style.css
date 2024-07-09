@@ -421,6 +421,10 @@ section p {
   position: relative;
 }
 
+.notrimyet section.feature span.trim {
+  display: none;
+}
+
 @media screen and (max-width: 800px) {
   .ui .editor {
     justify-content: end;
