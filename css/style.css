@@ -57,7 +57,8 @@ h2,
 h3,
 nav,
 p strong {
-  font-family: ui-rounded, 'SF Pro Rounded', system-ui, san-serif;
+  font-family: ui-rounded, 'SF Pro Rounded', 'Arial Rounded MT Bold', system-ui,
+    san-serif;
 }
 
 h1,
