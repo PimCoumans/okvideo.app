@@ -92,7 +92,7 @@ function updateExportBar(progress) {
 }
 
 function updateApps(progress) {
-  let appIndex = Math.floor(mapRange(0, apps.length, progress));
+  let appIndex = Math.floor(mapRange(0, apps.length - 1, progress));
   for (var index = 0; index < apps.length; index++) {
     const app = apps[index];
     if (index <= appIndex) {
@@ -104,9 +104,9 @@ function updateApps(progress) {
 }
 
 function updateExporter() {
-  const appOffset = 0.55;
+  const appOffset = 0.6;
   const exportPeriod = 0.5;
-  const progress = scrollProgressForElement(exporter);
+  const progress = scrollProgressForElement(exporter, 0.1, 0.1);
   if (progress < appOffset) {
     exportLabel.style.opacity = '1';
     exportBar.style.opacity = '1';

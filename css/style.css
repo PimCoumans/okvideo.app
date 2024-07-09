@@ -570,6 +570,7 @@ section p {
   font-size: 1em;
   text-shadow: rgba(0 0 0 / 0.25) 0 0.2em 0.2em;
   font-weight: 500;
+  transition: opacity 0.14s ease-out;
 }
 
 .ui .export .bar {
@@ -577,6 +578,7 @@ section p {
   height: 0.5em;
   background: #d9d9d968;
   border-radius: 0.25em;
+  transition: opacity 0.14s ease-out;
 }
 
 .ui .export .bar .progress {
@@ -614,13 +616,14 @@ section p {
   opacity: 0;
   background: white;
   transform: scale(0.25) translateY(12em);
-  transition: transform 0.5s cubic-bezier(0.1, 1.17, 0.64, 1),
-    opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out, transform 0.3s ease-in;
+  box-shadow: 0px 0.4em 0.6em rgb(0 0 0 / 0.25);
 }
 
 .ui .export .apps img.popped {
   opacity: 1;
   transform: none;
+  transition: transform 0.5s cubic-bezier(0.1, 1.17, 0.64, 1);
 }
 
 /* Projects */
