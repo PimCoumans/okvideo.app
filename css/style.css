@@ -424,7 +424,23 @@ section p {
   position: relative;
 }
 
-.notrimyet section.feature span.trim {
+section span.trim {
+  display: initial;
+}
+
+section span.notrim {
+  display: none;
+}
+
+.notrimyet section span.trim {
+  display: none;
+}
+
+.notrimyet section span.notrim {
+  display: initial;
+}
+
+.notrimyet section span.trim {
   display: none;
 }
 
