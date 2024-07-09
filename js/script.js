@@ -75,6 +75,7 @@ const editorClips = document.querySelectorAll('.ui .editor .clip');
 const clipCount = editorClips.length;
 const editor = document.querySelector('#editor');
 const editorElement = document.querySelector('#editor .editor');
+const noTrimYet = document.body.classList.contains('notrimyet');
 
 function updateEditor() {
   const minIndex = 0;
@@ -85,11 +86,10 @@ function updateEditor() {
   }
 
   const mappedIndex = Math.ceil(mapRange(minIndex, maxIndex, progress)) + 1;
-  console.log(mappedIndex);
 
   const index = maxIndex - mappedIndex;
 
-  if (index == -1) {
+  if (index == -1 && !noTrimYet) {
     editorElement.classList.add('open');
   } else {
     editorElement.classList.remove('open');
