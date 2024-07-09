@@ -612,11 +612,19 @@ section p {
 /* Privacy */
 .ui .clouds {
   flex: 1;
-  position: relative;
   min-height: 3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.ui .clouds > div {
+  position: relative;
+  width: 5em;
 }
 
 .ui .clouds .cloud {
+  width: 1em;
   position: absolute;
   top: -0.24em;
   transition: transform 0.12s ease-out;
@@ -633,18 +641,18 @@ section p {
 }
 
 .ui .clouds .cloud:nth-child(1) {
-  left: 1em;
+  left: -1.8em;
 }
 
 .ui .clouds .cloud:nth-child(2) {
-  left: 4em;
+  left: 1.2em;
 }
 
 .ui .clouds .cloud:nth-child(3) {
-  left: 0.2em;
+  left: -1.4em;
 }
 .ui .clouds .cloud:nth-child(4) {
-  left: 2em;
+  left: 0.45em;
 }
 
 section.download {

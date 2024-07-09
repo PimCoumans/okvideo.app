@@ -148,6 +148,7 @@ function updatePrivacy() {
   clouds.forEach((cloud, index) => {
     const translation = index > 1 ? multipliedOffset : offset;
     cloud.style.transform = `translateX(${translation}%`;
+    console.log(cloud.style.transform);
   });
 }
 
@@ -168,7 +169,6 @@ const testimonials = document.querySelectorAll(
   '#testimonials .testimonial .review > p'
 );
 testimonials.forEach(testimonial => {
-  console.log(testimonial);
   const moreLink = testimonial.querySelector('a.link-more');
   const lessLink = testimonial.querySelector('a.link-less');
   if (moreLink) {
