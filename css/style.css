@@ -117,7 +117,7 @@ nav ul {
   gap: 2em 0.2em;
   margin: 0;
   overflow: hidden;
-  height: 1.5em;
+  height: 2em;
 }
 
 nav ul li a {
@@ -125,7 +125,7 @@ nav ul li a {
   align-content: center;
   justify-content: center;
   font-size: 0.75em;
-  line-height: 2em;
+  line-height: 2.2em;
   padding: 0 0.5em;
 }
 
@@ -136,6 +136,7 @@ nav ul li.download a {
   border-radius: 0.6em;
   padding: 0 0.86em;
   margin-left: 0.5em;
+  white-space: nowrap;
 }
 
 nav ul li a:hover {
@@ -164,6 +165,7 @@ nav .logo,
 nav .logo a {
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
 
 nav .logo img {
