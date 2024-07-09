@@ -381,7 +381,7 @@ section p {
 }
 
 .ui .timeline .clip:nth-child(even) {
-  background-color: #d3d3d3;
+  background-color: #c0c0c0;
 }
 
 .ui .timeline .clip:last-child {
