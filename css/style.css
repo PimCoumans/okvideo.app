@@ -214,11 +214,8 @@ header h2 {
   margin: 0.5em 0 1em 0;
   color: var(--text-secondary);
   line-height: 1.25;
+  text-wrap: pretty;
 }
-
-/* header figure {
-  max-height: 10em;
-} */
 
 header figure {
   padding: 0;
