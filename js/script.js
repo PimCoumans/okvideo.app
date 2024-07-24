@@ -117,7 +117,7 @@ function updateExporter() {
   const exportProgress = normalizedClamp(progress / exportPeriod);
   updateExportBar(exportProgress);
   const appProgress = (progress - appOffset) / (1 - appOffset);
-  updateApps(appProgress);
+  updateApps(appProgress * 2);
 }
 
 const editorClips = document.querySelectorAll('.ui .editor .clip');
