@@ -734,20 +734,29 @@ section .body h2 {
   gap: 0.25em;
 }
 
-.testimonial:nth-child(odd) {
-  margin-left: 0.5em;
-}
-
-.testimonial:nth-child(odd) .review {
-  border-bottom-left-radius: 0em;
-}
-
-.testimonial:nth-child(even) {
+.testimonial:nth-child(1) {
   flex-direction: row-reverse;
 }
 
-.testimonial:nth-child(even) .review {
+.testimonial:nth-child(1) .review {
   border-bottom-right-radius: 0em;
+  background: #4699fa;
+}
+
+.testimonial:nth-child(1) .review p {
+  color: var(--white);
+}
+
+.testimonial:nth-child(1) .review p.source {
+  color: var(--white-secondary);
+}
+
+.testimonial:nth-child(n + 2) {
+  margin-left: 0.5em;
+}
+
+.testimonial:nth-child(n + 2) .review {
+  border-bottom-left-radius: 0em;
 }
 
 .testimonial img.avatar {
@@ -768,6 +777,11 @@ section .body h2 {
   margin: 0;
   color: var(--black);
   font-weight: 300;
+}
+
+.testimonial p .link-more,
+.testimonial p .link-less {
+  font-size: 0.85em;
 }
 
 .testimonial p .more,
