@@ -57,8 +57,7 @@ h2,
 h3,
 nav,
 p strong {
-  font-family: ui-rounded, 'SF Pro Rounded', 'Arial Rounded MT Bold', system-ui,
-    san-serif;
+  font-family: ui-rounded, 'SF Pro Rounded', 'Arial Rounded MT Bold', system-ui, san-serif;
 }
 
 h1,
@@ -275,6 +274,8 @@ section.feature {
   margin-bottom: 5em;
 }
 
+section.presskit .body,
+section.privacy .body,
 section.feature .body {
   padding: 0 2em;
 }
@@ -289,6 +290,8 @@ section.feature p {
   color: var(--text-secondary);
 }
 
+section.presskit h3,
+section.privacy h3,
 section.feature h3 {
   font-size: 1em;
   /* margin: 2em 2em 0.5em 2em; */
@@ -538,8 +541,7 @@ section span.notrim {
   margin-left: -0.8em;
   margin-right: -0.8em;
   z-index: 1;
-  transition: width 0.6s cubic-bezier(0.1, 1.17, 0.64, 1),
-    border-color 0.12s ease-out;
+  transition: width 0.6s cubic-bezier(0.1, 1.17, 0.64, 1), border-color 0.12s ease-out;
   position: relative;
 }
 
