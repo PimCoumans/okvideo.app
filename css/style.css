@@ -269,6 +269,13 @@ section .body {
   }
 }
 
+@media screen and (min-width: 1000px) {
+  section.presskit .body,
+  section.privacy .body {
+    font-size: 5rem;
+  }
+}
+
 section.feature {
   min-height: 50vh;
   margin-bottom: 5em;
@@ -278,6 +285,21 @@ section.presskit .body,
 section.privacy .body,
 section.feature .body {
   padding: 0 2em;
+}
+
+section.presskit .body h3 {
+  margin-bottom: 0;
+}
+section.presskit .body p {
+  margin-top: 0.5em;
+  color: black;
+}
+section.presskit .body p a {
+  color: var(--red);
+  font-weight: 500;
+}
+section.presskit .body p strong {
+  /* color: var(--dark-red); */
 }
 
 @media screen and (max-width: 600px) {
@@ -294,7 +316,6 @@ section.presskit h3,
 section.privacy h3,
 section.feature h3 {
   font-size: 1em;
-  /* margin: 2em 2em 0.5em 2em; */
 }
 
 section p {
