@@ -285,6 +285,10 @@ section.feature .body {
   padding: 0 2em;
 }
 
+section.privacy .centered {
+  padding: 0 1em;
+}
+
 section.presskit .body h3 {
   margin-bottom: 0;
 }
